@@ -1,0 +1,49 @@
+
+
+
+.theForm {
+    background-color: darkslateblue;
+    width: 30%;
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 15px;
+    color:deeppink;
+    font-weight: bold;
+}
+
+span {
+    color:deeppink;
+    text-decoration: underline white;
+}
+
+
+.name {
+    width: 50%;
+}
+
+.email {
+    width: 50%;
+}
+
+.password {
+    width: 50%;
+}
+
+button {
+    width:30%;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-radius: 25px;
+    background-color: deeppink;
+    color:whitesmoke;
+    font-size: 20px;
+    font-weight: bolder;
+}
