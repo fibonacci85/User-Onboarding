@@ -2,6 +2,7 @@ import React from "react";
 import './Form.css';
 import * as yup from 'yup'
 import formSchema from '../validation/formSchema';
+import axios from 'axios';
 
 
 
@@ -14,6 +15,8 @@ const Form = (props) => {
     const setErrors = props.setErrors;
     const buttonDisabled = props.buttonDisabled;
     const setButtonDisabled = props.setButtonDisabled;
+    const post = props.post;
+    const setPost = props.setPost;
 
 
     //validation
@@ -33,6 +36,25 @@ const validateChange = e => {
   });
 };
 
+    const formSubmit = event => {
+        event.preventDefault();
+        axios.post('https://reqres.in/api/users', formState)
+        .then(response => {
+            setPost(response.data);
+            console.log("success",post);
+            
+            setFormState({
+                name: "",
+                email: "",
+                password: "",
+                checkbox: "",
+            })
+        })
+        .catch( err => {
+            console.log(err.response)
+        })
+    };
+
     const inputChange = event => {
         event.persist();
         const newFormData = {
@@ -47,7 +69,7 @@ const validateChange = e => {
 return (
 
     <div className="theForm">
-        <form>
+        <form onSubmit={formSubmit}>
             <h2>Sign <span>your life</span> away to us!</h2><br/>
             <input 
             className="name" 
@@ -85,6 +107,7 @@ return (
              /><br/>
             <br/> 
             <button disabled={buttonDisabled}>Submit</button>
+            <pre>{JSON.stringify(post, null, 2)}</pre>
 
         </form>
     </div>

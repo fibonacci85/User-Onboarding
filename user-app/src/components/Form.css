@@ -19,6 +19,14 @@ p {
     font-weight: bold;
 }
 
+pre{
+
+    font-size: 15px;
+    color:greenyellow;
+    font-weight: bold;
+
+}
+
 span {
     color:deeppink;
     text-decoration: underline white;

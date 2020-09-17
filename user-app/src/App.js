@@ -40,6 +40,11 @@ formSchema.isValid(formState).then(valid => {
 },[formState]);
 
 
+//post state
+
+const [post, setPost] = useState([]);
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -51,6 +56,8 @@ formSchema.isValid(formState).then(valid => {
         setErrors={setErrors}
         buttonDisabled={buttonDisabled}
         setButtonDisabled={setButtonDisabled}
+        post={post}
+        setPost={setPost}
         />
       </header>
     </div>
